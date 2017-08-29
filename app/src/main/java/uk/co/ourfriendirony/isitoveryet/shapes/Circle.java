@@ -11,17 +11,12 @@ import android.view.View;
 public class Circle extends View {
 
     private static final int START_ANGLE_POINT = 269;
-
-    public static final int TOP = 100;
-    public static final int BOTTOM = TOP + 900;
-    public static final int LEFT = 250;
-    public static final int RIGHT = LEFT + 900;
     public static final int STROKE_WIDTH = 70;
 
     private final Paint paint;
-    private final RectF rect;
 
     private float angle;
+    private Coords coords;
 
     public Circle(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -34,12 +29,13 @@ public class Circle extends View {
         paint.setStrokeWidth(STROKE_WIDTH);
         paint.setColor(Color.GREEN);
 
-        rect = new RectF(LEFT, TOP, RIGHT, BOTTOM);
+
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        RectF rect = new RectF(coords.getLeft(), coords.getTop(), coords.getRight(), coords.getBottom());
         canvas.drawArc(rect, START_ANGLE_POINT, angle, false, paint);
     }
 
@@ -49,5 +45,9 @@ public class Circle extends View {
 
     public void setAngle(float angle) {
         this.angle = angle;
+    }
+
+    public void setCoords(Coords coords){
+        this.coords = coords;
     }
 }
