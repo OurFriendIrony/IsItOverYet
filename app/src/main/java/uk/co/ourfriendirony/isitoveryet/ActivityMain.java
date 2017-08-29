@@ -2,11 +2,8 @@ package uk.co.ourfriendirony.isitoveryet;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -28,10 +25,10 @@ public class ActivityMain extends AppCompatActivity {
         Circle circle = (Circle) findViewById(R.id.circle);
 
         CircleAngleAnimation animation = new CircleAngleAnimation(circle, 300);
-        animation.setDuration(1000);
+        animation.setDuration(5000);
         circle.startAnimation(animation);
-        TextView text = (TextView) findViewById(R.id.main_text);
 
+        TextView text = (TextView) findViewById(R.id.text_general);
         text.setText(getPercentageString(30));
 
 

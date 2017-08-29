@@ -10,7 +10,13 @@ import android.view.View;
 
 public class Circle extends View {
 
-    private static final int START_ANGLE_POINT = 0;
+    private static final int START_ANGLE_POINT = 269;
+
+    public static final int TOP = 100;
+    public static final int BOTTOM = TOP + 900;
+    public static final int LEFT = 250;
+    public static final int RIGHT = LEFT + 900;
+    public static final int STROKE_WIDTH = 70;
 
     private final Paint paint;
     private final RectF rect;
@@ -20,19 +26,15 @@ public class Circle extends View {
     public Circle(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        final int strokeWidth = 70;
+        angle = 0;
 
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(strokeWidth);
+        paint.setStrokeWidth(STROKE_WIDTH);
         paint.setColor(Color.GREEN);
 
-        //size 200x200 example
-        rect = new RectF(strokeWidth, strokeWidth, 800 + strokeWidth, 800 + strokeWidth);
-
-        //Initial Angle (optional, it can be zero)
-        angle = 0;
+        rect = new RectF(LEFT, TOP, RIGHT, BOTTOM);
     }
 
     @Override

@@ -20,11 +20,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/center_point"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"/>
 
     <TextView
-        style="@style/text"
-        android:id="@+id/main_text"
+        android:id="@+id/text_percent"
+        style="@style/text_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/circle"
+        android:layout_alignEnd="@+id/circle"
+        android:layout_alignStart="@+id/circle"
+        android:layout_alignTop="@+id/circle"
+        android:gravity="center"
+        android:text="0%"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/text_general"
+        style="@style/text_general"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/center_point"
