@@ -28,8 +28,6 @@ public class Circle extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(STROKE_WIDTH);
         paint.setColor(Color.GREEN);
-
-
     }
 
     @Override
@@ -51,3 +49,4 @@ public class Circle extends View {
         this.coords = coords;
     }
 }
+
