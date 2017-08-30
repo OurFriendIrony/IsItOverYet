@@ -27,7 +27,7 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_core);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -64,12 +64,7 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     private int getDegreesFromPercent(double percent) {
-        int degrees = (int) ((DEGREES_MAX / 100) * Math.round(percent));
-        if (degrees < 0)
-            return 0;
-        else if (degrees > DEGREES_MAX)
-            return DEGREES_MAX;
-        return degrees;
+        return (int) (((double) DEGREES_MAX / 100) * Math.round(percent));
     }
 
     private String getPercentageString(double percent) {

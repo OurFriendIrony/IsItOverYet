@@ -45,7 +45,7 @@ public class Circle extends View {
         this.angle = angle;
     }
 
-    public void setCoords(Coords coords){
+    public void setCoords(Coords coords) {
         this.coords = coords;
     }
 }

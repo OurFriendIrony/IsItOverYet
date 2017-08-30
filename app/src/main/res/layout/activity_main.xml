@@ -4,23 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey_05"
+    android:orientation="horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="uk.co.ourfriendirony.isitoveryet.activities.ActivityMain"
     tools:showIn="@layout/activity_core">
 
-    <LinearLayout
-        android:id="@+id/center_point"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal" />
-
     <uk.co.ourfriendirony.isitoveryet.shapes.Circle
         android:id="@+id/circle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/center_point"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:foregroundGravity="center" />
 
     <TextView
@@ -41,8 +34,9 @@
         style="@style/text_general"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/center_point"
-        android:text="@string/PERCENT_010"
+        android:layout_below="@id/circle"
+        android:text="@string/PERCENT_000"
         android:textAlignment="center" />
+
 
 </RelativeLayout>
