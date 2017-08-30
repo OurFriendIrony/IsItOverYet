@@ -1,5 +1,6 @@
-package uk.co.ourfriendirony.isitoveryet;
+package uk.co.ourfriendirony.isitoveryet.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -7,24 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
+import uk.co.ourfriendirony.isitoveryet.R;
 import uk.co.ourfriendirony.isitoveryet.animations.CircleAngleAnimation;
 import uk.co.ourfriendirony.isitoveryet.shapes.Circle;
 import uk.co.ourfriendirony.isitoveryet.shapes.Coords;
 
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_010;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_020;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_030;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_040;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_050;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_060;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_070;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_080;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_090;
-import static uk.co.ourfriendirony.isitoveryet.R.string.PERCENT_100;
+import static uk.co.ourfriendirony.isitoveryet.general.IntentGenerator.getContactEmailIntent;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -33,7 +27,7 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_core);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -70,57 +64,55 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     private int getDegreesFromPercent(double percent) {
-        int degrees = (int) ((DEGREES_MAX / 100) * Math.round(percent));
-        if (degrees < 0)
-            return 0;
-        else if (degrees > DEGREES_MAX)
-            return DEGREES_MAX;
-        return degrees;
+        return (int) (((double) DEGREES_MAX / 100) * Math.round(percent));
     }
 
     private String getPercentageString(double percent) {
-        if (percent <= 10)
-            return getStringResource(PERCENT_010);
-        else if (percent <= 20)
-            return getStringResource(PERCENT_020);
-        else if (percent <= 30)
-            return getStringResource(PERCENT_030);
-        else if (percent <= 40)
-            return getStringResource(PERCENT_040);
-        else if (percent <= 50)
-            return getStringResource(PERCENT_050);
-        else if (percent <= 60)
-            return getStringResource(PERCENT_060);
-        else if (percent <= 70)
-            return getStringResource(PERCENT_070);
-        else if (percent <= 80)
-            return getStringResource(PERCENT_080);
-        else if (percent <= 90)
-            return getStringResource(PERCENT_090);
-        else if (percent <= 100)
-            return getStringResource(PERCENT_100);
+        if (percent < 20)
+            return getResource(R.string.PERCENT_000);
+        else if (percent < 40)
+            return getResource(R.string.PERCENT_020);
+        else if (percent < 60)
+            return getResource(R.string.PERCENT_040);
+        else if (percent < 80)
+            return getResource(R.string.PERCENT_060);
+        else if (percent < 100)
+            return getResource(R.string.PERCENT_080);
+        else if (percent == 100)
+            return getResource(R.string.PERCENT_100);
         return "??";
     }
 
     @NonNull
-    private String getStringResource(int x) {
-        return getApplication().getApplicationContext().getString(x);
+    private String getResource(int resourceId) {
+        return getResources().getString(resourceId);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Intent intent = new Intent(this, ActivitySettings.class);
+                startActivity(intent);
+                return true;
 
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.action_contact:
+                startActivity(getContactEmailIntent());
+                return true;
+
+            case R.id.action_about:
+                Toast.makeText(this, R.string.NYI, Toast.LENGTH_SHORT).show();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
 }

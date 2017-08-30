@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.co.ourfriendirony.isitoveryet.ActivityMain">
+    android:background="@color/grey_05"
+    android:orientation="horizontal"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="uk.co.ourfriendirony.isitoveryet.activities.ActivityMain"
+    tools:showIn="@layout/activity_core">
 
-    <android.support.design.widget.AppBarLayout
+    <uk.co.ourfriendirony.isitoveryet.shapes.Circle
+        android:id="@+id/circle"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:foregroundGravity="center" />
+
+    <TextView
+        android:id="@+id/text_percent"
+        style="@style/text_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/circle"
+        android:layout_alignEnd="@+id/circle"
+        android:layout_alignStart="@+id/circle"
+        android:layout_alignTop="@+id/circle"
+        android:gravity="center"
+        android:text="0%"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/text_general"
+        style="@style/text_general"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_below="@id/circle"
+        android:text="@string/PERCENT_000"
+        android:textAlignment="center" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_activity_main" />
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

@@ -1,16 +1,19 @@
 <resources>
     <string name="app_name">Is It Over Yet?</string>
+    <string name="contact_email">ourfriendirony@gmail.com</string>
+
+    <string name="title_settings">Settings</string>
+
     <string name="action_settings">Settings</string>
+    <string name="action_contact">Contact</string>
+    <string name="action_about">About</string>
 
-    <string name="PERCENT_010">…not even begun…</string>
+    <string name="NYI">…Not Yet Implemented…</string>
+
+    <string name="PERCENT_000">…not even begun…</string>
     <string name="PERCENT_020">…just getting started</string>
-    <string name="PERCENT_030">…keep going</string>
-    <string name="PERCENT_040">…slow progress</string>
-    <string name="PERCENT_050">…half way there</string>
-    <string name="PERCENT_060">…are we there yet</string>
-    <string name="PERCENT_070">…come on come on</string>
-    <string name="PERCENT_080">…I can see the end</string>
-    <string name="PERCENT_090">…nearly there</string>
+    <string name="PERCENT_040">…keep going</string>
+    <string name="PERCENT_060">…half way there</string>
+    <string name="PERCENT_080">…nearly there</string>
     <string name="PERCENT_100">…it\'s finally over!</string>
-
 </resources>
