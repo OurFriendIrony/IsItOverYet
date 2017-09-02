@@ -14,7 +14,7 @@ import java.text.DecimalFormat;
 import java.util.Calendar;
 
 import uk.co.ourfriendirony.isitoveryet.R;
-import uk.co.ourfriendirony.isitoveryet.animations.CircleAngleAnimation;
+import uk.co.ourfriendirony.isitoveryet.animations.CircleAnimation;
 import uk.co.ourfriendirony.isitoveryet.shapes.Circle;
 
 import static uk.co.ourfriendirony.isitoveryet.general.IntentGenerator.getContactEmailIntent;
@@ -22,6 +22,8 @@ import static uk.co.ourfriendirony.isitoveryet.general.IntentGenerator.getContac
 public class ActivityMain extends AppCompatActivity {
 
     public static final int DEGREES_MAX = 360;
+    public static final int DRAW_TIME = 5000;
+    public static final int MILLIS_IN_A_DAY = 86400000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,15 @@ public class ActivityMain extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Circle circle = (Circle) findViewById(R.id.circle);
+        Circle circlePrimary = (Circle) findViewById(R.id.circle_primary);
+        Circle circleSecondary = (Circle) findViewById(R.id.circle_secondary);
 
         double percent = getElapsedTimeAsPercent();
 
-        CircleAngleAnimation animation = new CircleAngleAnimation(circle, getDegreesFromPercent(percent));
-        animation.setDuration(5000);
-        circle.startAnimation(animation);
+        CircleAnimation animation = new CircleAnimation(circlePrimary, circleSecondary, getDegreesFromPercent(percent));
+        animation.setDuration(DRAW_TIME);
+        circlePrimary.startAnimation(animation);
+        circleSecondary.startAnimation(animation);
 
         TextView textPercentage = (TextView) findViewById(R.id.text_percent);
         textPercentage.setText(new DecimalFormat("#.00").format(percent) + "%");
@@ -46,7 +50,7 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     private double getElapsedTimeAsPercent() {
-        final long totalMillis = 86400000;
+        final long totalMillis = MILLIS_IN_A_DAY;
 
         Calendar c = Calendar.getInstance();
         long now = c.getTimeInMillis();
