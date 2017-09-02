@@ -16,7 +16,6 @@ import java.util.Calendar;
 import uk.co.ourfriendirony.isitoveryet.R;
 import uk.co.ourfriendirony.isitoveryet.animations.CircleAngleAnimation;
 import uk.co.ourfriendirony.isitoveryet.shapes.Circle;
-import uk.co.ourfriendirony.isitoveryet.shapes.Coords;
 
 import static uk.co.ourfriendirony.isitoveryet.general.IntentGenerator.getContactEmailIntent;
 
@@ -32,9 +31,6 @@ public class ActivityMain extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Circle circle = (Circle) findViewById(R.id.circle);
-        Coords coords = new Coords()
-                .setLeft(250).setRight(1250).setTop(50).setBottom(1050);
-        circle.setCoords(coords);
 
         double percent = getElapsedTimeAsPercent();
 

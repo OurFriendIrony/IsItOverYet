@@ -10,12 +10,6 @@
     tools:context="uk.co.ourfriendirony.isitoveryet.activities.ActivityMain"
     tools:showIn="@layout/activity_core">
 
-    <uk.co.ourfriendirony.isitoveryet.shapes.Circle
-        android:id="@+id/circle"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:foregroundGravity="center" />
-
     <TextView
         android:id="@+id/text_percent"
         style="@style/text_percent"
@@ -28,6 +22,12 @@
         android:gravity="center"
         android:text="0%"
         android:textAlignment="center" />
+
+    <uk.co.ourfriendirony.isitoveryet.shapes.Circle
+        android:id="@+id/circle"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:foregroundGravity="center" />
 
     <TextView
         android:id="@+id/text_general"

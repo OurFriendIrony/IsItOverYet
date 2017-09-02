@@ -5,8 +5,8 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 
 public class IntentGenerator {
-    private static String APP_NAME = "Is It Over Yet?";
-    public static final String CONTACT_EMAIL = "ourfriendirony@gmail.com";
+    private static final String CONTACT_EMAIL = "ourfriendirony@gmail.com";
+    private static final String APP_NAME = "Is It Over Yet?";
 
     @NonNull
     public static Intent getWebPageIntent(String webAddress) {
