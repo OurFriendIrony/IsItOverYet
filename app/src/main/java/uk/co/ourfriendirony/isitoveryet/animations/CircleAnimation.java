@@ -31,7 +31,7 @@ public class CircleAnimation extends Animation {
         circlePrimary.setAngle(angle);
         circlePrimary.requestLayout();
 
-        circleSecondary.setAngle(angle);
+        circleSecondary.setAngle(360);
         circleSecondary.requestLayout();
     }
 }
