@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ourfriendirony="http://ourfriendirony.co.uk/apps"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_05"
+    android:orientation="horizontal"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="uk.co.ourfriendirony.isitoveryet.activities.ActivityFragmentDay">
+
+    <TextView
+        android:id="@+id/text_percent"
+        style="@style/text_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/circle_primary"
+        android:layout_alignEnd="@+id/circle_primary"
+        android:layout_alignStart="@+id/circle_primary"
+        android:layout_alignTop="@+id/circle_primary"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <uk.co.ourfriendirony.isitoveryet.shapes.Circle
+        android:id="@+id/circle_secondary"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:foregroundGravity="center"
+        ourfriendirony:width="46" />
+
+    <uk.co.ourfriendirony.isitoveryet.shapes.Circle
+        android:id="@+id/circle_primary"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:foregroundGravity="center"
+        ourfriendirony:width="40" />
+
+    <TextView
+        android:id="@+id/text_general"
+        style="@style/text_general"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/circle_primary"
+        android:text="@string/PERCENT_000"
+        android:textAlignment="center" />
+</RelativeLayout>

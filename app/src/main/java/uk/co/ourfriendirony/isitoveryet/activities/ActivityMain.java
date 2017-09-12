@@ -107,7 +107,7 @@ public class ActivityMain extends AppCompatActivity {
                 return true;
 
             case R.id.action_about:
-                Toast.makeText(this, R.string.NYI, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, ScreenSlidePagerActivity.class));
                 return true;
 
             default:

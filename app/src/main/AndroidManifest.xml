@@ -23,10 +23,6 @@
             android:label="@string/title_settings"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.ScreenSlidePageFragment"
-            android:label="PageFragment"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activities.ScreenSlidePagerActivity"
             android:label="PagerActivity"
             android:screenOrientation="portrait" />
