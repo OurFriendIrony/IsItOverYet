@@ -24,7 +24,7 @@ public class ActivityFragmentMinute extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_fragment_circle, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_pager_fragment_circle, container, false);
         Circle circlePrimary = (Circle) rootView.findViewById(R.id.circle_primary);
         Circle circleSecondary = (Circle) rootView.findViewById(R.id.circle_secondary);
         double percent = getElapsedTimeAsPercent();

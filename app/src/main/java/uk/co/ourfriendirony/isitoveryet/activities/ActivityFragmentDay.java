@@ -8,11 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
-import java.util.Calendar;
 
 import uk.co.ourfriendirony.isitoveryet.R;
 import uk.co.ourfriendirony.isitoveryet.animations.CircleAnimation;
-import uk.co.ourfriendirony.isitoveryet.general.TimeHandler;
 import uk.co.ourfriendirony.isitoveryet.shapes.Circle;
 
 import static uk.co.ourfriendirony.isitoveryet.general.TimeHandler.MILLIS_DAY;
@@ -26,7 +24,7 @@ public class ActivityFragmentDay extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_fragment_circle, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_pager_fragment_circle, container, false);
         Circle circlePrimary = (Circle) rootView.findViewById(R.id.circle_primary);
         Circle circleSecondary = (Circle) rootView.findViewById(R.id.circle_secondary);
         double percent = getElapsedTimeAsPercent();
